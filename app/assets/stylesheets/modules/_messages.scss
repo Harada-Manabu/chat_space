@@ -94,6 +94,26 @@
   &__view {
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    padding: 46px 40px;
+    .message-wrap {
+      &__info {
+        display: flex;
+        margin-bottom: 12px;
+        &--name {
+          color: #333333;
+          font-size: 16px;
+        }
+        &--date {
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+      &__body {
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 46px;
+      }
+    }
   }
   &__form {
     height: 90px;
