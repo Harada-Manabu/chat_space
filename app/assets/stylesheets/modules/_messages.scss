@@ -6,13 +6,55 @@
 }
 .side-bar {
   width: 300px;
+  color: #ffffff;
+  font-weight: bold;
   &__top {
-    background-color: #251341;
+    background-color: #253141;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .user-section {
+      width: 260px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        font-size: 16px;
+        height: 20px;
+        line-height: 20px;
+      }
+      &__icons {
+        width: 60px;
+        height: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        &--edit {
+          text-decoration: none;
+          margin-right: 5px;
+          color: #ffffff;
+        }
+        &--cog {
+          text-decoration: none;
+          color: #ffffff;
+        }
+      }
+    }
   }
   &__list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+    .group-section {
+      padding: 20px 20px 40px 20px;
+      &__name {
+        font-size: 15px;
+        padding-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+      }
+    }
   }
 }
 .chat-space {
