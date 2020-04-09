@@ -116,7 +116,38 @@
     }
   }
   &__form {
-    height: 90px;
     background-color: #d2d2d2;
+    .form-container {
+      padding: 20px 40px;
+      display: flex;
+      height: 90px;
+      &__wrap {
+        width: 100%;
+        display: flex;
+        position: relative;
+        .form-text {
+          padding-left: 10px;
+          width: 100%;
+          height: 50px;
+          border-style: none;
+        }
+        .form-icon {
+          position: absolute;
+          right: 10px;
+          line-height: 50px;
+          &__file {
+            display: none;
+          }
+        }
+      }
+      &__submit {
+        width: 100px;
+        padding: 0 30px;
+        color: #ffffff;
+        background-color: #38aef0;
+        margin-left: 15px;
+        height: 50px;
+      }
+    }
   }
 }

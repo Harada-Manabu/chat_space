@@ -32,6 +32,11 @@
           2020/04/08(Wed) 18:34:57
       .message-wrap__body
         hello world 3
-    
-      
   .chat-space__form
+    %form.form-container
+      .form-container__wrap
+        %input{type: "text", class: "form-text", placeholder: "type a message"}
+        %label{class: "form-icon"}
+          = icon('far', 'image', class: "form-icon__image")
+          %input{type: "file", class: "form-icon__file"}
+      %input{type: "submit", value: "Send", class: "form-container__submit"}
