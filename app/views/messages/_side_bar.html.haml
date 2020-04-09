@@ -1,0 +1,27 @@
+.side-bar
+  .side-bar__top
+    .user-section
+      .user-section__name
+        test
+      .user-section__icons
+        = link_to "#", class: "user-section__icons--edit" do
+          = icon('fas', 'edit')
+          %span<>
+        = link_to "#", class: "user-section__icons--cog" do
+          = icon('fas', 'cog')
+  .side-bar__list
+    .group-section
+      .group-section__name
+        techcamp1
+      .group-section__message
+        まだメッセージがありません
+    .group-section
+      .group-section__name
+        techcamp2
+      .group-section__message
+        まだメッセージがありません
+    .group-section
+      .group-section__name
+        techcamp3
+      .group-section__message
+        まだメッセージがありません
