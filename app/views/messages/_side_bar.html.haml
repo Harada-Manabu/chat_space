@@ -10,18 +10,10 @@
         = link_to edit_user_path(current_user), class: "user-section__icons--cog" do
           = icon('fas', 'cog')
   .side-bar__list
-    .group-section
-      .group-section__name
-        techcamp1
-      .group-section__message
-        まだメッセージがありません
-    .group-section
-      .group-section__name
-        techcamp2
-      .group-section__message
-        まだメッセージがありません
-    .group-section
-      .group-section__name
-        techcamp3
-      .group-section__message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group-section
+        = link_to '#' do
+          .group-section__name
+            = group.name
+          .group-section__message
+            メッセージはまだありません。
