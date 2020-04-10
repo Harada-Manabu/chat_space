@@ -1,8 +1,8 @@
 .side-bar
   .side-bar__top
     .user-section
-      .user-section__name
-        test
+      %h3.user-section__name
+        = current_user.name
       .user-section__icons
         = link_to "#", class: "user-section__icons--edit" do
           = icon('fas', 'edit')
