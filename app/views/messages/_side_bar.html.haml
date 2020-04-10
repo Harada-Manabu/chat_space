@@ -4,7 +4,7 @@
       .user-section__name
         = current_user.name
       .user-section__icons
-        = link_to "#", class: "user-section__icons--edit" do
+        = link_to new_group_path, class: "user-section__icons--edit" do
           = icon('fas', 'edit')
           %span<>
         = link_to edit_user_path(current_user), class: "user-section__icons--cog" do
