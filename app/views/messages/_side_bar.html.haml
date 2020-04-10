@@ -1,13 +1,13 @@
 .side-bar
   .side-bar__top
     .user-section
-      %h3.user-section__name
+      .user-section__name
         = current_user.name
       .user-section__icons
         = link_to "#", class: "user-section__icons--edit" do
           = icon('fas', 'edit')
           %span<>
-        = link_to "#", class: "user-section__icons--cog" do
+        = link_to edit_user_path(current_user), class: "user-section__icons--cog" do
           = icon('fas', 'cog')
   .side-bar__list
     .group-section
