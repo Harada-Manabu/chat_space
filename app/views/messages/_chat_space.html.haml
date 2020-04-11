@@ -2,9 +2,11 @@
   .chat-space__group-section
     .names
       .names__group
-        test
+        = @group.name
       .names__member
-        Member : test
+        Member :
+        - @group.users.each do |user|
+          = user.name
     = link_to "#", class: "edit-btn" do
       Edit 
   .chat-space__view
@@ -17,4 +19,3 @@
           = icon('far', 'image', class: 'form-iwrap__label--icon')
           = f.file_field :image, class: 'form-iwrap__label--file'
       = f.submit 'Send', class: 'form-submit'
-
