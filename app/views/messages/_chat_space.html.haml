@@ -33,10 +33,11 @@
       .message-wrap__body
         hello world 3
   .chat-space__form
-    %form.form-container
-      .form-container__wrap
-        %input{type: "text", class: "form-text", placeholder: "type a message"}
-        %label{class: "form-icon"}
-          = icon('far', 'image', class: "form-icon__image")
-          %input{type: "file", class: "form-icon__file"}
-      %input{type: "submit", value: "Send", class: "form-container__submit"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'form-message', placeholder: 'type a message'
+      .form-iwrap
+        = f.label :image, class: 'form-iwrap__label' do
+          = icon('far', 'image', class: 'form-iwrap__label--icon')
+          = f.file_field :image, class: 'form-iwrap__label--file'
+      = f.submit 'Send', class: 'form-submit'
+
