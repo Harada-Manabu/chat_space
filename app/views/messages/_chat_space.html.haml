@@ -8,30 +8,7 @@
     = link_to "#", class: "edit-btn" do
       Edit 
   .chat-space__view
-    .message-wrap
-      .message-wrap__info
-        .message-wrap__info--name
-          user1
-        .message-wrap__info--date
-          2020/04/08(Wed) 18:32:34
-      .message-wrap__body
-        hello world 1
-    .message-wrap
-      .message-wrap__info
-        .message-wrap__info--name
-          user2
-        .message-wrap__info--date
-          2020/04/08(Wed) 18:33:42
-      .message-wrap__body
-        hello world 2
-    .message-wrap
-      .message-wrap__info
-        .message-wrap__info--name
-          user3
-        .message-wrap__info--date
-          2020/04/08(Wed) 18:34:57
-      .message-wrap__body
-        hello world 3
+    = render @messages
   .chat-space__form
     = form_for [@group, @message] do |f|
       = f.text_field :body, class: 'form-message', placeholder: 'type a message'
