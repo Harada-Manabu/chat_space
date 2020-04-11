@@ -2,41 +2,20 @@
   .chat-space__group-section
     .names
       .names__group
-        test
+        = @group.name
       .names__member
-        Member : test
-    = link_to "#", class: "edit-btn" do
+        Member :
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group), class: "edit-btn" do
       Edit 
   .chat-space__view
-    .message-wrap
-      .message-wrap__info
-        .message-wrap__info--name
-          user1
-        .message-wrap__info--date
-          2020/04/08(Wed) 18:32:34
-      .message-wrap__body
-        hello world 1
-    .message-wrap
-      .message-wrap__info
-        .message-wrap__info--name
-          user2
-        .message-wrap__info--date
-          2020/04/08(Wed) 18:33:42
-      .message-wrap__body
-        hello world 2
-    .message-wrap
-      .message-wrap__info
-        .message-wrap__info--name
-          user3
-        .message-wrap__info--date
-          2020/04/08(Wed) 18:34:57
-      .message-wrap__body
-        hello world 3
+    = render @messages
   .chat-space__form
-    %form.form-container
-      .form-container__wrap
-        %input{type: "text", class: "form-text", placeholder: "type a message"}
-        %label{class: "form-icon"}
-          = icon('far', 'image', class: "form-icon__image")
-          %input{type: "file", class: "form-icon__file"}
-      %input{type: "submit", value: "Send", class: "form-container__submit"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'form-message', placeholder: 'type a message'
+      .form-iwrap
+        = f.label :image, class: 'form-iwrap__label' do
+          = icon('far', 'image', class: 'form-iwrap__label--icon')
+          = f.file_field :image, class: 'form-iwrap__label--file'
+      = f.submit 'Send', class: 'form-submit'
