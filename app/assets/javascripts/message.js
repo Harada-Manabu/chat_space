@@ -1,17 +1,20 @@
 $(function(){
 
   function buildHTML(message){
+
+    let messageInfo = `<div class="message-wrap__info">
+                  <div class="message-wrap__info--name">
+                    ${message.user_name}
+                  </div>
+                  <div class="message-wrap__info--date">
+                    ${message.created_at}
+                  </div>
+                </div>`
+
     if (message.image) {
-      let html = `<div class="message-wrap">
-                    <div class="message-wrap__info">
-                      <div class="message-wrap__info--name">
-                        ${message.user_name}
-                      </div>
-                      <div class="message-wrap__info--date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message-wrap__body">
+      let html = `<div class="message-wrap">`
+                    + messageInfo +
+                    `<div class="message-wrap__body">
                       <p class="message-wrap__body--text">
                         ${message.body}
                       </p>
@@ -20,16 +23,9 @@ $(function(){
                   </div>`
       return html;
     } else {
-      let html = `<div class="message-wrap">
-                    <div class="message-wrap__info">
-                      <div class="message-wrap__info--name">
-                        ${message.user_name}
-                      </div>
-                      <div class="message-wrap__info--date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message-wrap__body">
+      let html = `<div class="message-wrap">`
+                    + messageInfo +
+                    `<div class="message-wrap__body">
                       <p class="message-wrap__body--text">
                         ${message.body}
                       </p>
