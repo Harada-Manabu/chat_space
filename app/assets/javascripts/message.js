@@ -28,7 +28,7 @@ $(function(){
                 </div>`
 
     if (message.image) {
-      let html = `<div class="message-wrap">`
+      let html = `<div class="message-wrap" data-message-id=${message.id}>`
                     + messageInfo +
                     `<div class="message-wrap__body">
                       <p class="message-wrap__body--text">
@@ -39,7 +39,7 @@ $(function(){
                   </div>`
       return html;
     } else {
-      let html = `<div class="message-wrap">`
+      let html = `<div class="message-wrap" data-message-id=${message.id}>`
                     + messageInfo +
                     `<div class="message-wrap__body">
                       <p class="message-wrap__body--text">
