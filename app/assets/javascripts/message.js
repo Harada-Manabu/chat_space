@@ -1,5 +1,21 @@
 $(function(){
 
+  let reloadMessages = function() {
+    let last_message_id = $('.message:last').data('message-id');
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+      console.log('success');
+    })
+    .fail(function(){
+      alert('error');
+    });
+  }
+
   function buildHTML(message){
 
     let messageInfo = `<div class="message-wrap__info">
